@@ -1,39 +1,39 @@
 # PA-PC_202231031_RAFI-DIO-ADIBTA_C
-import cv2
-import matplotlib.pyplot as plt
-import numpy as np
-import skimage
-from skimage.feature import graycomatrix,graycoprops
+<br>import cv2<br>
+<br>import matplotlib.pyplot as plt<br>
+<br>import numpy as np<br>
+<br>import skimage<br>
+<br>from skimage.feature import graycomatrix,graycoprops<br>
 
-PENJELASAN:
-**1.import cv2**
-Perintah ini mengimpor library OpenCV.OpenCV mendukung berbagai operasi pengolahan citra seperti pemfilteran, deteksi tepi, deteksi objek, transformasi geometris,
-**2.import Matplotlib.pyplot as plt**
-Perintah ini mengimpor modul pyplot dari library Matplotlib, yang digunakan untuk membuat visualisasi data dalam bentuk grafik. 
-**3.import numpy as np**
-Perintah ini berfungsi mengimpor pustaka NumPy dan memberi alias np. NumPy adalah pustaka fundamental untuk komputasi ilmiah di Python yang mendukung array multidimensi dan berbagai fungsi matematika yang efisien.
-**4.import skimage**
-Perintah ini berfungsi mengimpor pustaka scikit-image, yang digunakan untuk pengolahan citra. Scikit-image menyediakan algoritma yang efisien dan mudah digunakan untuk berbagai tugas pengolahan citra, seperti segmentasi, penajaman, transformasi geometris, dll.
+<br>PENJELASAN:<br>
+<br>**1.import cv2**<br>
+<br>Perintah ini mengimpor library OpenCV.OpenCV mendukung berbagai operasi pengolahan citra seperti pemfilteran, deteksi tepi, deteksi objek, transformasi geometris,<br>
+<br>**2.import Matplotlib.pyplot as plt**<br>
+<br>Perintah ini mengimpor modul pyplot dari library Matplotlib, yang digunakan untuk membuat visualisasi data dalam bentuk grafik. 
+<br>**3.import numpy as np**<br>
+<br>Perintah ini berfungsi mengimpor pustaka NumPy dan memberi alias np. NumPy adalah pustaka fundamental untuk komputasi ilmiah di Python yang mendukung array multidimensi dan berbagai fungsi matematika yang efisien.<br>
+<br>**4.import skimage**<br>
+<br>Perintah ini berfungsi mengimpor pustaka scikit-image, yang digunakan untuk pengolahan citra. Scikit-image menyediakan algoritma yang efisien dan mudah digunakan untuk berbagai tugas pengolahan citra, seperti segmentasi, penajaman, transformasi geometris, dll.<br>
 
-**from skimage.feature import graycomatrix, graycoprops**
-graycomatrix: Fungsi ini menghitung matriks co-occurrence tingkat abu-abu (GLCM) dari sebuah citra.
-graycoprops: Fungsi ini digunakan untuk menghitung sifat-sifat statistik dari matriks GLCM yang dihasilkan oleh graycomatrix. 
+<br>**from skimage.feature import graycomatrix, graycoprops**<br>
+<br>graycomatrix: Fungsi ini menghitung matriks co-occurrence tingkat abu-abu (GLCM) dari sebuah citra.<br>
+<br>graycoprops: Fungsi ini digunakan untuk menghitung sifat-sifat statistik dari matriks GLCM yang dihasilkan oleh graycomatrix. <br>
 
 
-def mean_filter(image, kernel_size=3):
-    padded_image = np.pad(image, ((kernel_size // 2, kernel_size // 2), (kernel_size // 2, kernel_size // 2)), mode='constant')
-    filtered_image = np.zeros_like(image)
+<br>def mean_filter(image, kernel_size=3):<br>
+  <br>  padded_image = np.pad(image, ((kernel_size // 2, kernel_size // 2), (kernel_size // 2, kernel_size // 2)), mode='constant')<br>
+   <br> filtered_image = np.zeros_like(image)<br>
     
-    for i in range(image.shape[0]):
-        for j in range(image.shape[1]):
-            region = padded_image[i:i + kernel_size, j:j + kernel_size]
-            filtered_image[i, j] = np.mean(region)
+  <br> for i in range(image.shape[0]):<br>
+        <br>for j in range(image.shape[1]):<br>
+          <br>  region = padded_image[i:i + kernel_size, j:j + kernel_size]<br>
+            <br>filtered_image[i, j] = np.mean(region)<br>
     
-    return filtered_image
+   <br> return filtered_image<br>
 
-    PENJELASAN:
-**1.mean_filter**
-image merupakan perintah untuk Citra input yang akan difilter.
+  <br>  PENJELASAN:<br>
+<br>**1.mean_filter**<br>
+<br>image merupakan perintah untuk Citra input yang akan difilter.
 kernel_size berfungsi untuk mengatur ukuran kernel untuk filter mean.
 np.pad berfungsi menambahkan padding di sekitar citra asli untuk memungkinkan operasi filter pada tepi citra. Padding dilakukan dengan nilai nol (constant).
 np.zeros_like(image) berfungsi untuk membuat citra keluaran (filtered_image) yang memiliki ukuran dan tipe data yang sama dengan citra input.
