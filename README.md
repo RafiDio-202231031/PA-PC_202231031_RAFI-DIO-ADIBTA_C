@@ -7,7 +7,7 @@
 
 <br>PENJELASAN:<br>
 <br>**1.import cv2**<br>
-<br>Perintah ini mengimpor library OpenCV.OpenCV mendukung berbagai operasi pengolahan citra seperti pemfilteran, deteksi tepi, deteksi objek, transformasi geometris,<br>
+<br>Perintah ini mengimpor library OpenCV.OpenCV mendukung berbagai operasi pengolahan citra seperti pemfilteran, deteksi tepi, deteksi objek, transformasi geometris.<br>
 <br>**2.import Matplotlib.pyplot as plt**<br>
 <br>Perintah ini mengimpor modul pyplot dari library Matplotlib, yang digunakan untuk membuat visualisasi data dalam bentuk grafik. 
 <br>**3.import numpy as np**<br>
